@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DoomVAE Demo</title>
+  <script src="lib/p5.custom.js"></script>
+  <script src="lib/p5.dom.min.js"></script>
+  <script src="lib/deeplearn.0.3.10.js"></script>
+  <script src="lib/b64tool.js"></script>
+  <script src="lib/jquery-1.12.4.min.js"></script>
+
+  <script src="lib/template.v1.js"></script>
+
+  <script src="models/doomrnn.min.js"></script>
+  <script src="models/doomvae.min.js"></script>
+  <script src="models/carvae.min.js"></script>
+  <script src="models/carrnn.min.js"></script>
+
+  <script src="controller.js"></script>
+  <script src="model.js"></script>
+
+</head>
+<body>
+  <div style="text-align: left;">
+    <div id="sketch"></div>
+  </div>
+</body>
+<script src="vae_demo.js"></script>
+<script>
+var the_doom_data_dir = 'doomdata/';
+var the_car_data_dir = 'cardata/';
+
+var interesting_doom = [0, 2, 4, 7, 9, 13, 15, 22, 24, 25, 27, 33, 52, 55, 59];
+var interesting_car = [2, 5, 6, 9, 10, 15, 17, 18, 20, 21, 23, 25, 26, 28, 29];
+
+var doom_vae = {
+  model: DoomRNN,
+  data_dir: the_doom_data_dir,
+  div_name: 'sketch',
+  min_range: 1,
+  max_range: 1399,
+  interesting: interesting_doom,
+};
+
+var custom_p5 = new p5(vae_demo(doom_vae), doom_vae.div_name);
+
+</script>
+</html>

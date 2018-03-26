@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CarRNN Demo</title>
+  <style>
+  body {padding: 0; 
+      margin: 0;
+  }
+  </style>
+  <script src="lib/p5.custom.js"></script>
+  <script src="lib/p5.dom.min.js"></script>
+  <script src="lib/deeplearn.0.3.10.js"></script>
+  <script src="lib/b64tool.js"></script>
+  <script src="lib/jquery-1.12.4.min.js"></script>
+
+  <script src="models/doomrnn.min.js"></script>
+  <script src="models/doomvae.min.js"></script>
+  <script src="models/carvae.min.js"></script>
+  <script src="models/carrnn.min.js"></script>
+
+  <script src="controller.js"></script>
+  <script src="model.js"></script>
+
+</head>
+</body>
+<div id="sketch"></div>
+</body>
+<script src="carrnn_demo.js"></script>
+<script>
+
+var car_settings = {
+  div_name: 'sketch',
+  temperature: 0.75,
+  slider_mode: true,
+  square_mode: false,
+  control_mode: true,
+  cover_mode: false,
+};
+
+var custom_p5 = new p5(carrnn_demo(car_settings), carrnn_demo.div_name);
+
+</script>
+</html>
