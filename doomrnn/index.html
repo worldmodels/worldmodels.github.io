@@ -281,8 +281,10 @@ window.addEventListener("keydown", function(e) {
 }, false);
 
 $(document.body).on("touchmove", function(event) {
+  if (mobileMode) {
     event.preventDefault();
     event.stopPropagation();
+  }
 });
 
 // resize cover
