@@ -8,7 +8,7 @@ This article was built using the [distill.pub](https://distill.pub) article temp
 
 We would to extend our thanks to Alex Graves, Douglas Eck, Mike Schuster, Rajat Monga, Vincent Vanhoucke, Jeff Dean and the Google Brain team for helpful feedback and for encouraging us to explore this area of research.
 
-Any errors here are our own and do not reflect opinions of our proofreaders and colleagues. If you see mistakes or want to suggest changes, feel free to contribute feedback by participating in the discussion [forum](https://github.com/worldmodels/issues) for this article.
+Any errors here are our own and do not reflect opinions of our proofreaders and colleagues. If you see mistakes or want to suggest changes, feel free to contribute feedback by participating in the discussion [forum](https://github.com/worldmodels/worldmodels.github.io/issues) for this article.
 
 The experiments in this article were performed on both a P100 GPU and a 64-core CPU Ubuntu Linux virtual machine provided by [Google Cloud Platform](https://cloud.google.com/), using [TensorFlow](https://www.tensorflow.org/) and [OpenAI Gym](https://github.com/openai/gym).
 
@@ -34,7 +34,7 @@ The code to reproduce experiments in this work, as well as IPython notebooks for
 
 ### Reuse
 
-Diagrams and text are licensed under Creative Commons Attribution [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) with the [source available on GitHub](https://github.com/worldmodels), unless noted otherwise. The figures that have been reused from other sources don’t fall under this license and can be recognized by the citations in their caption.
+Diagrams and text are licensed under Creative Commons Attribution [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) with the [source available on GitHub](https://github.com/worldmodels/worldmodels.github.io), unless noted otherwise. The figures that have been reused from other sources don’t fall under this license and can be recognized by the citations in their caption.
 
 <h2 id="appendix">Appendix</h2>
 
