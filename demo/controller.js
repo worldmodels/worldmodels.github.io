@@ -85,8 +85,8 @@ function show_scrolldown() {
 // fade in the instructions
 function show_instructions() {
   "use strict";
-  var instruction_mobile = "Interactive demo → Tap screen to override the agent's decisions.";
-  var instruction_desktop = "Interactive demo → Tap screen or use arrow keys to override the agent's decisions.";
+  var instruction_mobile = "Interactive demo.<br/>Tap screen to override the agent's decisions.";
+  var instruction_desktop = "Interactive demo. Tap screen or use arrow keys to override the agent's decisions.";
   var instruction;
   if (mobileMode) {
     instruction = instruction_mobile;
