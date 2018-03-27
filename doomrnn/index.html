@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
+body, html {height:100%;
+width: 100%;}
 body {padding: 0; 
     margin: 0;
+    overflow: hidden;
   overflow-x: hidden; 
   overflow-y: hidden;
 }
+div.wrap {height:100%; overflow:hidden;}
 #cover_sketch {padding: 0; 
     margin: 0;
 }
@@ -222,20 +226,22 @@ dt-article figcaption b {
 </head>
 </body>
 <div id="loading_text">
-<div class="spinner"></div>
-<div class="figload">&nbsp;&nbsp;&nbsp;&nbsp;Loading DoomRNN ...</div>
-</div>
-<div id="cover_overlay_wrap" class="unselectable">
-  <div id="cover_overlay" class="unselectable">
+  <div class="spinner"></div>
+  <div class="figload">&nbsp;&nbsp;&nbsp;&nbsp;Loading DoomRNN ...</div>
   </div>
-  <div id="cover_instruction" class="cover-instruction" style="text-align: center;">
-    <div id="cover_instruction_text">Interactive demo: Tap screen to override the agent's decisions.</div>
+  <div id="cover_overlay_wrap" class="unselectable">
+    <div id="cover_overlay" class="unselectable">
+    </div>
+    <div id="cover_instruction" class="cover-instruction" style="text-align: center;">
+      <div id="cover_instruction_text">Interactive demo: Tap screen to override the agent's decisions.</div>
+    </div>
   </div>
+  <div id="cover_title" class="unselectable">
+    <img src="../assets/cover_title.svg" id="cover_title_svg" class="svgunselectable"/>
 </div>
-<div id="cover_title" class="unselectable">
-  <img src="../assets/cover_title.svg" id="cover_title_svg" class="svgunselectable"/>
+<div class=wrap>
+  <div id="doomrnn_sketch" class="unselectable"></div>
 </div>
-<div id="doomrnn_sketch" class="unselectable"></div>
 </body>
 <script>
 // controller
@@ -269,6 +275,14 @@ if (!mobileMode) {
 } else {
   console.log('mobile mode');
 }
+
+// To disable scrolling via pressing arrow keys on keyboard:
+window.addEventListener("keydown", function(e) {
+    // space, page up, page down and arrow keys:
+    if([32, 33, 34, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
 // resize cover
 function resize_cover() {
