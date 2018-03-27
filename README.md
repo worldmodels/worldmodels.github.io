@@ -1,12 +1,27 @@
-# World Models Distill Article
+# World Models Article
 
-Requirements:
+This repo contains the source for the interactive article "World Models"
+
+![GitHub Logo](/assets/world_models_card_both.png)
+Format: ![World Modles](https://worldmodels.github.io/)
+
+### Article
+
+`draft.md` - main text of the article, in markdown.
+`draft_appendix.md` - appendix, in markdown.
+`draft_bib.html` - the citations.
+`draft_header.html` - start of the document
+`index.html` - generated, don't edit this file.
+
+### Requirements
 
 [npm markdown-it](https://www.npmjs.com/package/markdown-it)
 
 [npm markdown-it-katex](https://www.npmjs.com/package/markdown-it-katex)
 
 [npm markdown-it-center-text](https://www.npmjs.com/package/markdown-it-center-text)
+
+### Instructions to Build and Test
 
 Make it such that when you run the command `markdown-it`, both katex and center-text plugings are enabled. I did this by adding 4 lines to `markdown-it.js`
 
