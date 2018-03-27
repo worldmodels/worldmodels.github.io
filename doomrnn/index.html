@@ -59,36 +59,16 @@ div.wrap {height:100%; overflow:hidden;}
   font-weight: 300;
   color: #FFFFFF;
 }
-.scroll-down {
-  width: 80px;
+.article-link {
+  width: 100%;
   height: 40px;
-  right: 10px;
   bottom: 10px;
   position: absolute;
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 300;
   color: #FFFFFF;
-  opacity: 0;
-  -webkit-transition: opacity 2s ease-in;
-  -moz-transition: opacity 2s ease-in;
-  -o-transition: opacity 2s ease-in;
-  -ms-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
-}
-.scroll-down span {
-  margin-top: 5px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-100%, 0) rotate(45deg);
-  transform-origin: 100% 100%;
-  height: 2px;
-  width: 10px;
-  background: #FFFFFF;
-}
-.scroll-down span:nth-of-type(2) {
-  transform-origin: 0 100%;
-  transform: translate(0, 0) rotate(-45deg);
+  opacity: 1;
 }
 .spinner {
   position: absolute;
@@ -230,7 +210,7 @@ dt-article figcaption b {
 <div id="loading_text">
   <div class="spinner"></div>
   <div class="figload">&nbsp;&nbsp;&nbsp;&nbsp;Loading DoomRNN ...</div>
-  </div>
+</div>
   <div id="cover_overlay_wrap" class="unselectable">
     <div id="cover_overlay" class="unselectable">
     </div>
@@ -240,10 +220,13 @@ dt-article figcaption b {
   </div>
   <div id="cover_title" class="unselectable">
     <img src="../assets/cover_title.svg" id="cover_title_svg" class="svgunselectable"/>
-</div>
-<div class=wrap>
-  <div id="doomrnn_sketch" class="unselectable"></div>
-</div>
+  </div>
+  <div class=wrap>
+    <div id="doomrnn_sketch" class="unselectable"></div>
+  </div>
+  <div id="read_more_link" class="article-link" style="text-align: center;">
+    <div><a href="../" style="color:#FFFFFF;text-decoration: none;" target="_blank">&lt; read more &gt;</a></div>
+  </div>
 </body>
 <script>
 // controller
@@ -323,8 +306,8 @@ function resize_cover() {
 // fade in the instructions
 function show_instructions() {
   "use strict";
-  var instruction_mobile = "Interactive demo → Tap screen to override the agent's decisions.";
-  var instruction_desktop = "Interactive demo → Tap screen or use arrow keys to override the agent's decisions.";
+  var instruction_mobile = "Interactive demo. Tap screen to override the agent's decisions.";
+  var instruction_desktop = "Interactive demo. Tap screen or use arrow keys to override the agent's decisions.";
   var instruction;
   if (mobileMode) {
     instruction = instruction_mobile;
@@ -334,8 +317,7 @@ function show_instructions() {
   var screen_x = Math.max(window.innerWidth, 320);
   var screen_y = Math.max(window.innerHeight, 320);
   $('#cover_instruction_text').text(instruction);
-  $('#cover_instruction').delay(20000).fadeOut("slow");
-  $('#cover_overlay_wrap').delay(15000).fadeOut("slow");
+  $('#cover_instruction_text').delay(20000).fadeOut("slow");
   $('#cover_title').delay(15000).fadeOut("slow");
 }
 
