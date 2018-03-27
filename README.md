@@ -2,15 +2,19 @@
 
 This repo contains the source for the interactive article "World Models"
 
-![GitHub Logo](/assets/world_models_card_both.png)
-Format: ![World Modles](https://worldmodels.github.io/)
+![World Models](/assets/world_models_card_both.png)
+[World Models Article](https://worldmodels.github.io/)
 
 ### Article
 
 `draft.md` - main text of the article, in markdown.
+
 `draft_appendix.md` - appendix, in markdown.
+
 `draft_bib.html` - the citations.
+
 `draft_header.html` - start of the document
+
 `index.html` - generated, don't edit this file.
 
 ### Requirements
