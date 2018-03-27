@@ -175,8 +175,6 @@ dt-article figcaption b {
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="mobile-web-app-capable" content="yes">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <!-- roboto font -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
@@ -225,7 +223,6 @@ dt-article figcaption b {
   <title>DoomRNN Demo</title>
 
   <script src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/demo/lib/jquery-1.12.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/demo/lib/mobile-detect.min.js"></script>
 
 </head>
@@ -288,6 +285,11 @@ window.addEventListener("keydown", function(e) {
         e.preventDefault();
     }
 }, false);
+
+$(document.body).on("touchmove", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+});
 
 // resize cover
 function resize_cover() {
