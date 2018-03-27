@@ -232,13 +232,13 @@ dt-article figcaption b {
   <div id="cover_title" class="unselectable">
     <img src="../assets/cover_title.svg" id="cover_title_svg" class="svgunselectable"/>
   </div>
-  <div class=wrap>
-    <div id="doomrnn_sketch" class="unselectable"></div>
-  </div>
   <div id="read_more_link" class="article-link" style="text-align: center;">
     <div><a id="read_more_link_ref" href="../" style="color:#FFFFFF;text-decoration: none;" target="_blank">&lt; read more &gt;</a></div>
   </div>
 </body>
+<div class=wrap>
+  <div id="doomrnn_sketch"></div>
+</div>
 <script>
 // controller
 var scroll_top = 0;
@@ -1111,11 +1111,11 @@ if (DoomRNN.randi(0, 2) == 0) {
 }
 
 var doom_slider_mode = true;
-
+/*
 if (mobileMode) {
   doom_slider_mode = false;
 }
-
+*/
 var doom_temperature = DoomRNN.randf(0.9, 2.2);
 
 if (mobileMode) {
