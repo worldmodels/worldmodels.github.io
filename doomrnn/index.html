@@ -330,9 +330,11 @@ function show_instructions() {
     instruction = instruction_desktop;
   }
   // change link to pdf if mobile mode
+  /*
   if (mobileMode) {
     $('#read_more_link_ref').attr("href", "https://arxiv.org/")
   }
+  */
   var screen_x = Math.max(window.innerWidth, 320);
   var screen_y = Math.max(window.innerHeight, 320);
   $('#cover_instruction_text').html(instruction);
