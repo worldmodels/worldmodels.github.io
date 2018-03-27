@@ -306,7 +306,7 @@ function resize_cover() {
 // fade in the instructions
 function show_instructions() {
   "use strict";
-  var instruction_mobile = "Interactive demo. Tap screen to override the agent's decisions.";
+  var instruction_mobile = "Interactive demo.<br/>Tap screen to override the agent's decisions.";
   var instruction_desktop = "Interactive demo. Tap screen or use arrow keys to override the agent's decisions.";
   var instruction;
   if (mobileMode) {
@@ -316,7 +316,7 @@ function show_instructions() {
   }
   var screen_x = Math.max(window.innerWidth, 320);
   var screen_y = Math.max(window.innerHeight, 320);
-  $('#cover_instruction_text').text(instruction);
+  $('#cover_instruction_text').html(instruction);
   $('#cover_instruction_text').delay(20000).fadeOut("slow");
   $('#cover_title').delay(15000).fadeOut("slow");
 }
