@@ -1,6 +1,6 @@
 # World Models Article
 
-This repo contains the source for the interactive article "World Models"
+This repo contains the source for the interactive article "World Models".
 
 ![World Models](/assets/world_models_card_both.png)
 [World Models Article](https://worldmodels.github.io/)
