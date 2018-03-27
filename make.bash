@@ -2,3 +2,4 @@ markdown-it draft.md > draft_body.html
 markdown-it draft_appendix.md > draft_appendix.html
 cat draft_header.html draft_body.html appendix_start draft_appendix.html appendix_end draft_bib.html > draft.html
 cp draft.html index.html
+rm draft.html
