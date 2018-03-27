@@ -2,11 +2,11 @@
 
 We would like to thank [Blake Richards](http://linclab.org/blake-richards/), [Kory Mathewson](http://korymathewson.com/), [Kyle McDonald](http://www.kylemcdonald.net), [Kai Arulkumaran](http://kaixhin.com), [Ankur Handa](https://ankurhanda.github.io), [Denny Britz](http://www.wildml.com/), [Elwin Ha](http://elwinha.com) and [Natasha Jaques](https://www.media.mit.edu/people/jaquesn/overview/) for their thoughtful feedback on this article, and for offering their valuable perspectives and insights from their areas of expertise to make this article better.
 
-The interative demos in this article were all built using [p5.js](https://p5js.org/). Deploying all these machine learning models in a web browser was made possible with [deeplearn.js](https://deeplearnjs.org/), a hardware-accelerated machine learning framework for the browser, developed by the [People+AI Research Initiative](https://ai.google/pair) (PAIR) team at Google. A special thanks goes to Nikhil Thorat and Daniel Smilkov for their help during the development process.
+The interative demos in this article were all built using [p5.js](https://p5js.org/). Deploying all of these machine learning models in a web browser was made possible with [deeplearn.js](https://deeplearnjs.org/), a hardware-accelerated machine learning framework for the browser, developed by the [People+AI Research Initiative](https://ai.google/pair) (PAIR) team at Google. A special thanks goes to Nikhil Thorat and Daniel Smilkov for their help during the development process.
 
 This article was built using the [distill.pub](https://distill.pub) article template. We would like to thank Chris Olah and the rest of the Distill editorial team for their valuable feedback and generous editorial support, in addition to supporting the use of their Distill technology beyond [distill.pub](https://distill.pub) articles.
 
-We would to extend our thanks to Alex Graves, Douglas Eck, Mike Schuster, Rajat Monga, Vincent Vanhoucke, Jeff Dean and the the Google Brain team for helpful feedback and for encouraging us to explore this area of research.
+We would to extend our thanks to Alex Graves, Douglas Eck, Mike Schuster, Rajat Monga, Vincent Vanhoucke, Jeff Dean and the Google Brain team for helpful feedback and for encouraging us to explore this area of research.
 
 Any errors here are our own and do not reflect opinions of our proofreaders and colleagues. If you see mistakes or want to suggest changes, feel free to contribute feedback by participating in the discussion [forum](https://github.com/worldmodels/issues) for this article.
 
