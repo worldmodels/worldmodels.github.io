@@ -25,7 +25,7 @@ div.wrap {height:100%; overflow:hidden;}
     top: 0;
     left: 0;
     background: #000000;
-    opacity: 0.5;
+    opacity: 0.75;
     width: 100%;
     height: 100%;
     -webkit-transition: opacity 2s ease-in;
@@ -236,7 +236,7 @@ dt-article figcaption b {
     <div id="doomrnn_sketch" class="unselectable"></div>
   </div>
   <div id="read_more_link" class="article-link" style="text-align: center;">
-    <div><a href="../" style="color:#FFFFFF;text-decoration: none;" target="_blank">&lt; read more &gt;</a></div>
+    <div><a id="read_more_link_ref" href="../" style="color:#FFFFFF;text-decoration: none;" target="_blank">&lt; read more &gt;</a></div>
   </div>
 </body>
 <script>
@@ -328,6 +328,10 @@ function show_instructions() {
     instruction = instruction_mobile;
   } else {
     instruction = instruction_desktop;
+  }
+  // change link to pdf if mobile mode
+  if (mobileMode) {
+    $('#read_more_link_ref').attr("href", "https://arxiv.org/")
   }
   var screen_x = Math.max(window.innerWidth, 320);
   var screen_y = Math.max(window.innerHeight, 320);
