@@ -62,7 +62,7 @@ div.wrap {height:100%; overflow:hidden;}
 .article-link {
   width: 100%;
   height: 40px;
-  bottom: 10px;
+  top: 10px;
   position: absolute;
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
@@ -290,6 +290,8 @@ function resize_cover() {
     $('#cover_title').width(screen_x+'px');
     $('#cover_title').height(screen_x+'px');
 
+    $('#read_more_link').css('top',((screen_x-30)+'px'));
+
   } else { // horizontal
     //console.log("horizontal mode screen_x = "+screen_x+", screen_y = "+screen_y);
 
@@ -298,6 +300,8 @@ function resize_cover() {
 
     $('#cover_title').width(screen_y+'px');
     $('#cover_title').height(screen_y+'px');
+
+    $('#read_more_link').css('top',((screen_y-30)+'px'));
 
   }
 
