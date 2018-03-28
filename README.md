@@ -49,6 +49,6 @@ Modify text by editing `draft.md` -- this is where all of the content exists.
 
 Appendix content goes in `draft_appendix.md`. Add bib entries to `draft_bib.html`.
 
-Run `bash make.bash` to build document into `draft.html` and `index.html` (which are identical).
+Run `bash make.bash` to build document into `index.html` (which are identical).
 
 Run `python -m http.server` to serve on the base directory to view `draft.html` in a local browser for debugging.
