@@ -881,8 +881,8 @@ var doommrnn_demo = function(settings) {
     function draw_image() {
       pic = DoomRNN.vae_decode(rnn_z);
       img = pic2img(pic);
-      img.resize(screen_x, screen_y);
-      //img.resizeNN(screen_x, screen_y);
+      //img.resize(screen_x, screen_y);
+      img.resizeNN(screen_x, screen_y);
       p.image(img, 0, 0);
       //p.filter(p.INVERT);
     }
