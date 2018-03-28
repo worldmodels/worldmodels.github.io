@@ -95,7 +95,7 @@ function show_instructions() {
   }
   var screen_x = Math.max(window.innerWidth, 320);
   var screen_y = Math.max(window.innerHeight, 320);
-  $('#cover_instruction_text').text(instruction);
+  $('#cover_instruction_text').html(instruction);
   $('#cover_instruction').delay(25000).fadeOut("slow");
 }
 
