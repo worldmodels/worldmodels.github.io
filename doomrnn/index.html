@@ -805,6 +805,8 @@ var doommrnn_demo = function(settings) {
     "use strict";
 
     var div_name = settings.div_name;
+    var invert_mode = settings.invert_mode;
+    var pixel_mode = settings.pixel_mode;
 
     var img;
     var pic;
@@ -881,10 +883,15 @@ var doommrnn_demo = function(settings) {
     function draw_image() {
       pic = DoomRNN.vae_decode(rnn_z);
       img = pic2img(pic);
-      //img.resize(screen_x, screen_y);
-      img.resizeNN(screen_x, screen_y);
+      if (pixel_mode) {
+        img.resizeNN(screen_x, screen_y);
+      } else {
+        img.resize(screen_x, screen_y);
+      }
       p.image(img, 0, 0);
-      //p.filter(p.INVERT);
+      if (invert_mode) {
+        p.filter(p.INVERT);
+      }
     }
 
     function restart_game_state() {
@@ -1107,10 +1114,20 @@ var doommrnn_demo = function(settings) {
 
 <script>
 
+var invert_mode = false;
+var pixel_mode = false;
+
 var doombrain = doombrain_t115;
 
 if (DoomRNN.randi(0, 2) == 0) {
   doombrain = doombrain_r130;
+}
+
+if (DoomRNN.randi(0, 5) == 0) {
+  invert_mode = true;
+}
+if (DoomRNN.randi(0, 3) == 0) {
+  pixel_mode = true;
 }
 
 var doom_slider_mode = true;
@@ -1132,6 +1149,8 @@ var doomrnn_settings = {
   slider_mode: doom_slider_mode,
   square_mode: false,
   cover_mode: false,
+  invert_mode: invert_mode,
+  pixel_mode: pixel_mode,
 };
 
 var custom_p5 = new p5(doommrnn_demo(doomrnn_settings), doomrnn_settings.div_name);
