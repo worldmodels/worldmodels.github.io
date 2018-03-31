@@ -48,7 +48,7 @@ Ideally, we would like to be able to efficiently train large RNN-based agents. T
 
 Although there is a large body of research relating to *model-based* reinforcement learning, this article is not meant to be a review <dt-cite key="rl_survey,s03_overview"></dt-cite> of the current state of the field. Instead, the goal of this article is to distill several key concepts from a series of papers 1990--2015 on combinations of RNN-based world models and controllers <dt-cite key="s05_making_the_world_differentiable,s05a_cm,s05b_rl,s05c_boredom,learning_to_think"></dt-cite>. We will also discuss other related works in the literature that share similar ideas of learning a world model and training an agent using this model.
 
-In this article, we present a simplified framework that we can use to experimentally demonstrate some of the key concepts from these papers, and also suggest further insights to effectively apply these ideas to various RL environments. We use similar terminology and notation as <dt-cite key="learning_to_think"></dt-cite> when describing our methodology and experiments.
+In this article, we present a simplified framework that we can use to experimentally demonstrate some of the key concepts from these papers, and also suggest further insights to effectively apply these ideas to various RL environments. We use similar terminology and notation as *Learning to Think*<dt-cite key="learning_to_think"></dt-cite> when describing our methodology and experiments.
 
 ______
 
