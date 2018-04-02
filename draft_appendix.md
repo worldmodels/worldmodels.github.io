@@ -22,10 +22,11 @@ BibTeX citation
 
 <pre class="citation long">@article{Ha2018WorldModels,
   author = {Ha, D. and Schmidhuber, J.},
-  title = {World Models},
-  year = {2018},
-  url = {https://worldmodels.github.io},
-  doi = {10.5281/zenodo.1207631}
+  title  = {World Models},
+  eprint = {arXiv:1803.10122},
+  doi    = {10.5281/zenodo.1207631},
+  url    = {https://worldmodels.github.io},
+  year   = {2018}
 }</pre>
 
 ### Open Source Code
