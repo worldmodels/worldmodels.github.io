@@ -63,7 +63,7 @@ For the M Model, we use an <dt-cite key="lstm">LSTM</dt-cite> recurrent neural n
 <figcaption>MDN-RNN<dt-cite key="sketchrnn"></dt-cite></figcaption>
 </div>
 
-Unlike the handwriting and sketch generation works, rather than using the MDN-RNN to model the pdf of the next pen stroke, we model instead the pdf of the next latent vector $z$. We would sample from this pdf at each timestep to generate the hallucinated environments. In the Doom task, we also also use the MDN-RNN to predict the probability of whether the agent has died in this frame. If that probability is above 50%, then we set <code>done</code> to be <code>True</code> in the virtual dream environment. Given that death is a low probability event at each timestep, we find the cutoff approach to more stable compared to sampling from the Bernoulli distribution.
+Unlike the handwriting and sketch generation works, rather than using the MDN-RNN to model the pdf of the next pen stroke, we model instead the pdf of the next latent vector $z$. We would sample from this pdf at each time step to generate the hallucinated environments. In the Doom task, we also also use the MDN-RNN to predict the probability of whether the agent has died in this frame. If that probability is above 50%, then we set <code>done</code> to be <code>True</code> in the virtual dream environment. Given that death is a low probability event at each time step, we find the cutoff approach to more stable compared to sampling from the Bernoulli distribution.
 
 The MDN-RNNs were trained for 20 epochs on the data collected from a random policy agent. In the Car Racing task, the LSTM used 256 hidden units, while the Doom task used 512 hidden units. In both tasks, we used 5 Gaussian mixtures and did not model the correlation $\rho$ parameter, hence $z$ is sampled from a factored mixture of Gaussian distribution.
 
@@ -103,7 +103,7 @@ We also experimented with an agent that has access to only the $z$ vector from t
 
 ### DoomRNN
 
-We conducted a similar experiment on the hallucinated Doom environment we called *DoomRNN*. Please note that we have not actually attempted to train our agent on the actual <dt-cite key="vizdoom">VizDoom</dt-cite> environment, and had only used VizDoom for the purpose of collecting training data using a random policy. *DoomRNN* is more computationally efficient compared to VizDoom as it only operates in latent space without the need to render a screenshot at each timestep, and does not require running the actual Doom game engine.
+We conducted a similar experiment on the hallucinated Doom environment we called *DoomRNN*. Please note that we have not actually attempted to train our agent on the actual <dt-cite key="vizdoom">VizDoom</dt-cite> environment, and had only used VizDoom for the purpose of collecting training data using a random policy. *DoomRNN* is more computationally efficient compared to VizDoom as it only operates in latent space without the need to render a screenshot at each time step, and does not require running the actual Doom game engine.
 
 <div style="text-align: center;">
 <img src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/doomrnn.svg" style="display: block; margin: auto; width: 100%;"/>
@@ -114,5 +114,5 @@ In the virtual DoomRNN environment we constructed, we increased the temperature 
 
 <div style="text-align: center;">
 <img src="assets/doomtakecover_histogram.svg" style="display: block; margin: auto; width: 100%;"/>
-<figcaption>Histogram of timesteps survived in the actual environment over 100 consecutive trials.</figcaption>
+<figcaption>Histogram of time steps survived in the actual environment over 100 consecutive trials.</figcaption>
 </div>
