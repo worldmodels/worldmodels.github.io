@@ -11,7 +11,7 @@ ______
 <figcaption>A World Model, from Scott McCloud's <i>Understanding Comics</i>.<dt-cite key="understandingcomics,understandingcomics_blog"></dt-cite></figcaption>
 </div>
 
-Humans develop a mental model of the world based on what they are able to perceive with their limited senses. The decisions and actions we make are based on this internal model. Jay Wright Forrester, the father of system dynamics, defined a mental model as:
+Humans develop a mental model of the world based on what they are able to perceive with their limited senses. The decisions and actions we make are based on this internal model. Jay Wright Forrester, the father of system dynamics, described a mental model as:
 
 &ldquo;*The image of the world around us, which we carry in our head, is just a model. Nobody in his head imagines all the world, government or country. He has only selected concepts, and relationships between them, and uses those to represent the real system.*&rdquo;
 <dt-cite key="forrester"></dt-cite>
@@ -25,10 +25,11 @@ To handle the vast amount of information that flows through our daily lives, our
 
 One way of understanding the predictive model in our brains is that it might not be about just predicting the future in general, but predicting future sensory data given current motor actions<dt-cite key="Keller2012,Leinweber2017"></dt-cite>. We are able to instinctively act on this predictive model and perform fast reflexive behaviours when we face danger<dt-cite key="survival_optimization"></dt-cite>, without the need to consciously plan out a course of action.
 
-Take baseball for example<dt-cite key="baseball_player_drawings"></dt-cite>. A baseball batter has milliseconds to decide how they should swing the bat -- shorter than the time it takes for visual signals from our eyes to reach our brain. The reason we are able to hit a 115mph fastball is due to our ability to instinctively predict when and where the ball will go. For professional players, this all happens subconsciously. Their muscles reflexively swing the bat at the right time and location in line with their internal models' prediction<dt-cite key="mt_motion"></dt-cite>. They can quickly act on their predictions of the future without the need to consciously roll out possible future scenarios to form a plan<dt-cite key="mt_motion_article"></dt-cite>.
+Take baseball for example. A baseball batter has milliseconds to decide how they should swing the bat -- shorter than the time it takes for visual signals from our eyes to reach our brain. The reason we are able to hit a 100mph fastball is due to our ability to instinctively predict when and where the ball will go. For professional players, this all happens subconsciously. Their muscles reflexively swing the bat at the right time and location in line with their internal models' prediction<dt-cite key="mt_motion"></dt-cite>. They can quickly act on their predictions of the future without the need to consciously roll out possible future scenarios to form a plan<dt-cite key="mt_motion_article"></dt-cite>.
 
 <div style="text-align: center;">
-<img src="assets/baseball.svg" style="display: block; margin: auto; width: 100%;"/>
+<img src="assets/mccloud_baseball.jpeg" style="display: block; margin: auto; width: 100%;"/>
+<figcaption>We learn to perceive time <i>spatially</i> when we read comics. According to cartoonist and comics theorist Scott McCloud, &ldquo;<i>in the world of comics, time and space are one and the same.</i>&rdquo;<dt-cite key="understandingcomics"></dt-cite></figcaption>
 </div>
 
 In many reinforcement learning (RL)<dt-cite key="Kaelbling:96,sutton_barto,wiering2012"></dt-cite> problems, an artificial agent also benefits from having a good representation of past and present states, and a good predictive model of the future <dt-cite key="Werbos87specifications,dyna_slides"></dt-cite>, preferably a powerful predictive model implemented on a general purpose computer such as a recurrent neural network (RNN) <dt-cite key="s05_making_the_world_differentiable,s05a_cm,s05b_rl"></dt-cite>. 
