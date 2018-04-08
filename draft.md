@@ -16,7 +16,7 @@ Humans develop a mental model of the world based on what they are able to percei
 &ldquo;*The image of the world around us, which we carry in our head, is just a model. Nobody in his head imagines all the world, government or country. He has only selected concepts, and relationships between them, and uses those to represent the real system.*&rdquo;
 <dt-cite key="forrester"></dt-cite>
 
-To handle the vast amount of information that flows through our daily lives, our brain learns an abstract representation of both spatial and temporal aspects of this information. We are able to observe a scene and remember an abstract description thereof <dt-cite key="facial_identity_primate_brain,single_neuron_viz"></dt-cite>. Evidence also suggests that what we perceive at any given moment is governed by our brain’s prediction of the future based on our internal model<dt-cite key="primary_viz_cortex_past_present,mt_motion"></dt-cite>.
+To handle the vast amount of information that flows through our daily lives, our brain learns an abstract representation of both spatial and temporal aspects of this information. We are able to observe a scene and remember an abstract description thereof<dt-cite key="facial_identity_primate_brain,single_neuron_viz"></dt-cite>. Evidence also suggests that what we perceive at any given moment is governed by our brain’s prediction of the future based on our internal model<dt-cite key="primary_viz_cortex_past_present,mt_motion"></dt-cite>.
 
 <div style="text-align: left;">
 <img src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/kitaoka.jpeg" style="display: block; margin: auto; width: 100%;"/>
@@ -29,10 +29,10 @@ Take baseball for example. A baseball batter has milliseconds to decide how they
 
 <div style="text-align: center;">
 <img src="assets/mccloud_baseball.jpeg" style="display: block; margin: auto; width: 100%;"/>
-<figcaption>We learn to perceive time <i>spatially</i> when we read comics. According to cartoonist and comics theorist Scott McCloud, &ldquo;<i>in the world of comics, time and space are one and the same.</i>&rdquo;<dt-cite key="understandingcomics"></dt-cite></figcaption>
+<figcaption>We learn to perceive time <i>spatially</i> when we read comics. According to cartoonist and comics theorist Scott McCloud, &ldquo;<i>in the world of comics, time and space are one and the same.</i>&rdquo; Art © Scott McCloud.<dt-cite key="understandingcomics"></dt-cite></figcaption>
 </div>
 
-In many reinforcement learning (RL)<dt-cite key="Kaelbling:96,sutton_barto,wiering2012"></dt-cite> problems, an artificial agent also benefits from having a good representation of past and present states, and a good predictive model of the future <dt-cite key="Werbos87specifications,dyna_slides"></dt-cite>, preferably a powerful predictive model implemented on a general purpose computer such as a recurrent neural network (RNN) <dt-cite key="s05_making_the_world_differentiable,s05a_cm,s05b_rl"></dt-cite>. 
+In many reinforcement learning (RL) problems <dt-cite key="Kaelbling:96,sutton_barto,wiering2012"></dt-cite>, an artificial agent also benefits from having a good representation of past and present states, and a good predictive model of the future <dt-cite key="Werbos87specifications,dyna_slides"></dt-cite>, preferably a powerful predictive model implemented on a general purpose computer such as a recurrent neural network (RNN) <dt-cite key="s05_making_the_world_differentiable,s05a_cm,s05b_rl"></dt-cite>. 
 
 <!--A simple example is training an agent to play Flappy Bird<dt-cite key="flappy_bird"></dt-cite> from observing only pixel inputs. If the agent had already learned a compressed, low-dimensional representation of each image frame it sees, and also a predictive model of what the frames will look like in the future, then it would have almost all of the information needed to solve this task<dt-cite key="keras_flappybird"></dt-cite>.
 
