@@ -31,7 +31,7 @@ BibTeX citation
 
 ### Open Source Code
 
-The code to reproduce experiments in this work, as well as IPython notebooks for training and visualizing VAE and MDN-RNN models will be made available at a later date.
+The instructions to reproduce the experiments in this work is available [here](http://blog.otoro.net/2018/06/09/world-models-experiments/).
 
 ### Reuse
 
