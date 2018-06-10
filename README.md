@@ -2,6 +2,10 @@
 
 This repo contains the source for the interactive article "World Models".
 
+If you are looking for the TensorFlow implementation of the model and experimental setup, please see:
+
+https://github.com/hardmaru/WorldModelsExperiments
+
 ![World Models](/assets/world_models_card_both.png)
 [World Models Article](https://worldmodels.github.io/)
 
