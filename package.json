@@ -1,0 +1,14 @@
+{
+  "name": "worldmodels",
+  "version": "0.0.1",
+  "dependencies": {
+    "markdown-it": "*",
+    "markdown-it-katex": "*",
+    "markdown-it-center-text": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/worldmodels/worldmodels.github.io"
+  },
+  "license": "MIT"
+}

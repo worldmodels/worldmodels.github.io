@@ -21,38 +21,22 @@ https://github.com/hardmaru/WorldModelsExperiments
 
 `index.html` - generated, don't edit this file.
 
-### Requirements
-
-[npm markdown-it](https://www.npmjs.com/package/markdown-it)
-
-[npm markdown-it-katex](https://www.npmjs.com/package/markdown-it-katex)
-
-[npm markdown-it-center-text](https://www.npmjs.com/package/markdown-it-center-text)
-
 ### Instructions to Build and Test
-
-Make it such that when you run the command `markdown-it`, both katex and center-text plugings are enabled. I did this by adding 4 lines to `markdown-it.js`
-
-```
-  // existing code in markdown-it.js:
-  md = require('..')({
-    html: !options['no-html'],
-    xhtmlOut: false,
-    typographer: options.typographer,
-    linkify: options.linkify
-  });
-
-  // additional 4 lines:
-  var mk = require('markdown-it-katex');
-  var md_center = require('markdown-it-center-text');
-  md.use(mk);
-  md.use(md_center);
+```bash
+git clone https://github.com/worldmodels/worldmodels.github.io.git
+cd worldmodels.github.io
+npm install
 ```
 
 Modify text by editing `draft.md` -- this is where all of the content exists.
 
 Appendix content goes in `draft_appendix.md`. Add bib entries to `draft_bib.html`.
 
-Run `bash make.bash` to build document into `index.html` (which are identical).
-
+Run `./bin/make` to build document into `index.html` (which are identical).
 Run `python -m http.server` to serve on the base directory to view `draft.html` in a local browser for debugging.
+
+To watch all markdown files for changes and then compile them, you can run the following
+```
+brew install fswatch
+./bin/watch
+```
