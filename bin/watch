@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+echo "Watching .md files for changes"
+./bin/make
+
+fswatch . -e ".*" -i "\\.md$" | while read f; do
+  echo $f
+  ./bin/make
+done
