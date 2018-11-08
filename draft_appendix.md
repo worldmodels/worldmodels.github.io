@@ -21,9 +21,9 @@ For attribution in academic contexts, please cite this work as
 BibTeX citation
 
 <pre class="citation long">@article{ha2018worldmodels,
-  title={World Models},
+  title={Recurrent world models facilitate policy evolution},
   author={Ha, David and Schmidhuber, J{\"u}rgen},
-  journal={arXiv preprint arXiv:1803.10122},
+  journal={arXiv preprint arXiv:1809.01999},
   year={2018}
 }</pre>
 
