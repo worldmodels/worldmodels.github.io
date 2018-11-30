@@ -426,12 +426,12 @@ We have shown that one iteration of this training loop was enough to solve simpl
 
 <div style="text-align: center;">
 <video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/pendulum01.mp4" type="video/mp4"/></video>
-<figcaption>Generated rollout after the first iteration. M has difficulties predicting states of a swung up pole since the data collected from the initial random policy is near the steady state in the bottom half. Despite this, C still learns to swing the pole upwards when deployed inside of M. </figcaption>
+<figcaption>Generated rollout after the first iteration. M has difficulty predicting states of a swung up pole since the data collected from the initial random policy is near the steady state in the bottom half. Despite this, C still learns to swing the pole upwards when deployed inside of M. </figcaption>
 </div>
 
 <div style="text-align: center;">
 <video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/pendulum20.mp4" type="video/mp4"/></video>
-<figcaption>Generated rollout after the 20 iterations. Deploying policies that swing the pole upwards in the actual environment gathered more data that recorded the pole being in the top half, allowing M to model the environment more accurately, and C to learn a better policy inside of M.</figcaption>
+<figcaption>Generated rollout after 20 iterations. Deploying policies that swing the pole upwards in the actual environment gathered more data that recorded the pole being in the top half, allowing M to model the environment more accurately, and C to learn a better policy inside of M, eventually balancing an inverted pendulum.</figcaption>
 </div>
 
 In the present approach, since M is a MDN-RNN that models a probability distribution for the next frame, if it does a poor job, then it means the agent has encountered parts of the world that it is not familiar with. Therefore we can adapt and reuse M's training loss function to encourage curiosity. By flipping the sign of M's loss function in the actual environment, the agent will be encouraged to explore parts of the world that it is not familiar with. The new data it collects may improve the world model.
