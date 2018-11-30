@@ -199,6 +199,16 @@ var carrnn_demo = function(settings) {
   var carrnn_sketch = function( p ) { 
     "use strict";
 
+    var invert_mode = false;
+    var pixel_mode = false;
+
+    if (CarRNN.randi(0, 2) == 0) {
+      invert_mode = true;
+    }
+    if (CarRNN.randi(0, 2) == 0) {
+      pixel_mode = true;
+    }
+
     var div_name = settings.div_name;
 
     var key_up = 38;
@@ -275,12 +285,25 @@ var carrnn_demo = function(settings) {
       return img;
     }
 
-    function draw_image() {
+    /*function draw_image() {
       pic = CarRNN.vae_decode(rnn_z);
       img = pic2img(pic);
       //img.resize(screen_x, screen_y);
       img.resizeNN(screen_x, screen_y);
       p.image(img, 0, 0);
+    }*/
+    function draw_image() {
+      pic = CarRNN.vae_decode(rnn_z);
+      img = pic2img(pic);
+      if (pixel_mode) {
+        img.resizeNN(screen_x, screen_y);
+      } else {
+        img.resize(screen_x, screen_y);
+      }
+      p.image(img, 0, 0);
+      if (invert_mode) {
+        p.filter(p.INVERT);
+      }
     }
 
     function restart_game_state() {

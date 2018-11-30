@@ -16,15 +16,20 @@ The experiments in this article were performed on both a P100 GPU and a 64-core 
 
 For attribution in academic contexts, please cite this work as
 
-<pre class="citation short">Ha and Schmidhuber, "World Models", 2018.</pre>
+<pre class="citation short">Ha and Schmidhuber, "Recurrent World Models Facilitate Policy Evolution", 2018.</pre>
 
 BibTeX citation
 
-<pre class="citation long">@article{ha2018worldmodels,
-  title={Recurrent world models facilitate policy evolution},
-  author={Ha, David and Schmidhuber, J{\"u}rgen},
-  journal={arXiv preprint arXiv:1809.01999},
-  year={2018}
+<pre class="citation long">@incollection{ha2018worldmodels,
+  title = {Recurrent World Models Facilitate Policy Evolution},
+  author = {Ha, David and Schmidhuber, J{\"u}rgen},
+  booktitle = {Advances in Neural Information Processing Systems 31},
+  editor = {S. Bengio and H. Wallach and H. Larochelle and K. Grauman and N. Cesa-Bianchi and R. Garnett},
+  pages = {2451--2463},
+  year = {2018},
+  publisher = {Curran Associates, Inc.},
+  url = {https://papers.nips.cc/paper/7512-recurrent-world-models-facilitate-policy-evolution},
+  note="\url{https://worldmodels.github.io}",
 }</pre>
 
 ### Open Source Code
