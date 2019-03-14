@@ -24,12 +24,11 @@ BibTeX citation
   title = {Recurrent World Models Facilitate Policy Evolution},
   author = {Ha, David and Schmidhuber, J{\"u}rgen},
   booktitle = {Advances in Neural Information Processing Systems 31},
-  editor = {S. Bengio and H. Wallach and H. Larochelle and K. Grauman and N. Cesa-Bianchi and R. Garnett},
   pages = {2451--2463},
   year = {2018},
   publisher = {Curran Associates, Inc.},
   url = {https://papers.nips.cc/paper/7512-recurrent-world-models-facilitate-policy-evolution},
-  note="\url{https://worldmodels.github.io}",
+  note = "\url{https://worldmodels.github.io}",
 }</pre>
 
 ### Open Source Code
