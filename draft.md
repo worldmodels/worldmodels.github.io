@@ -7,7 +7,7 @@ ______
 ## Introduction
 
 <div style="text-align: left;">
-<img src="assets/world_model_comic.jpeg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/world_model_comic.jpeg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>A World Model, from Scott McCloud's <i>Understanding Comics</i>. <dt-cite key="understandingcomics,understandingcomics_blog"></dt-cite></figcaption>
 </div>
 
@@ -18,7 +18,7 @@ Humans develop a mental model of the world based on what they are able to percei
 To handle the vast amount of information that flows through our daily lives, our brain learns an abstract representation of both spatial and temporal aspects of this information. We are able to observe a scene and remember an abstract description thereof <dt-cite key="facial_identity_primate_brain,single_neuron_viz"></dt-cite>. Evidence also suggests that what we perceive at any given moment is governed by our brain’s prediction of the future based on our internal model <dt-cite key="primary_viz_cortex_past_present,mt_motion"></dt-cite>.
 
 <div style="text-align: left;">
-<img src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/kitaoka.jpeg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/kitaoka.jpeg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>What we see is based on our brain's prediction of the future. <dt-cite key="kitaoka,pdi,Watanabe2018"></dt-cite></figcaption>
 </div>
 
@@ -27,18 +27,11 @@ One way of understanding the predictive model inside of our brains is that it mi
 Take baseball for example. A baseball batter has milliseconds to decide how they should swing the bat -- shorter than the time it takes for visual signals from our eyes to reach our brain. The reason we are able to hit a 100mph fastball is due to our ability to instinctively predict when and where the ball will go. For professional players, this all happens subconsciously. Their muscles reflexively swing the bat at the right time and location in line with their internal models' predictions <dt-cite key="mt_motion"></dt-cite>. They can quickly act on their predictions of the future without the need to consciously roll out possible future scenarios to form a plan <dt-cite key="mt_motion_article"></dt-cite>.
 
 <div style="text-align: center;">
-<img src="assets/mccloud_baseball.jpeg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/mccloud_baseball.jpeg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>We learn to perceive time <i>spatially</i> when we read comics. According to cartoonist and comics theorist Scott McCloud, &ldquo;<i>in the world of comics, time and space are one and the same.</i>&rdquo; Art © Scott McCloud. <dt-cite key="understandingcomics"></dt-cite></figcaption>
 </div>
 
 In many reinforcement learning (RL) problems <dt-cite key="Kaelbling:96,sutton_barto,wiering2012"></dt-cite>, an artificial agent also benefits from having a good representation of past and present states, and a good predictive model of the future <dt-cite key="Werbos87specifications,dyna_slides"></dt-cite>, preferably a powerful predictive model implemented on a general purpose computer such as a recurrent neural network (RNN) <dt-cite key="s05_making_the_world_differentiable,s05a_cm,s05b_rl"></dt-cite>. 
-
-<!--A simple example is training an agent to play Flappy Bird<dt-cite key="flappy_bird"></dt-cite> from observing only pixel inputs. If the agent had already learned a compressed, low-dimensional representation of each image frame it sees, and also a predictive model of what the frames will look like in the future, then it would have almost all of the information needed to solve this task<dt-cite key="keras_flappybird"></dt-cite>.
-
-<div style="text-align: center;">
-<img src="assets/flappy_bird_multi.jpeg" style="display: block; margin: auto; width: 100%;"/>
-<i>Flappy Bird Clone</i><dt-cite key="flappy_bird_ne"></dt-cite>
-</div>-->
 
 Large RNNs are highly expressive models that can learn rich spatial and temporal representations of data. However, many *model-free* RL methods in the literature often only use small neural networks with few parameters. The RL algorithm is often bottlenecked by the *credit assignment problem*<dt-fn>In many RL problems, the feedback (positive or negative reward) is given at end of a sequence of steps. The credit assignment problem tackles the problem of figuring out which steps caused the resulting feedback--which steps should receive credit or blame for the final result?</dt-fn>, which makes it hard for traditional RL algorithms to learn millions of weights of a large model, hence in practice, smaller networks are used as they iterate faster to a good policy during training.
 
@@ -57,7 +50,7 @@ ______
 We present a simple model inspired by our own cognitive system. In this model, our agent has a visual sensory component that compresses what it sees into a small representative code. It also has a memory component that makes predictions about future codes based on historical information. Finally, our agent has a decision-making component that decides what actions to take based only on the representations created by its vision and memory components.
 
 <div id = "overview_diagram_div" style="text-align: center;">
-<img id="overview_diagram" src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/world_model_overview.svg" style="display: block; margin: auto; width: 720px;"/>
+<img id="overview_diagram" src="assets/world_model_overview.svg" style="display: block; margin: auto; width: 720px;"/>
 </div>
 
 Our agent consists of three components that work closely together: Vision (V), Memory (M), and Controller (C).
@@ -67,7 +60,7 @@ Our agent consists of three components that work closely together: Vision (V), M
 The environment provides our agent with a high dimensional input observation at each time step. This input is usually a 2D image frame that is part of a video sequence. The role of the V model is to learn an abstract, compressed representation of each observed input frame.
 
 <div style="text-align: left;">
-<img src="assets/vae.svg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/vae.svg" style="display: block; margin: auto; width: 100%;"/>
 <br/>
 <figcaption>Flow diagram of a Variational Autoencoder. <dt-cite key="vae,vae_dm"></dt-cite></figcaption>
 </div>
@@ -85,7 +78,7 @@ We use a Variational Autoencoder (VAE) <dt-cite key="vae,vae_dm"></dt-cite> as t
 While it is the role of the V model to compress what the agent sees at each time frame, we also want to compress what happens over time. For this purpose, the role of the M model is to predict the future. The M model serves as a predictive model of the future $z$ vectors that V is expected to produce. Because many complex environments are stochastic in nature, we train our RNN to output a probability density function $p(z)$ instead of a deterministic prediction of $z$.
 
 <div style="text-align: center;">
-<img src="assets/mdn_rnn_new.svg" style="display: block; margin: auto; width: 80%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/mdn_rnn_new.svg" style="display: block; margin: auto; width: 80%;"/>
 <figcaption>RNN with a Mixture Density Network output layer. The MDN outputs the parameters of a mixture of Gaussian distribution used to sample a prediction of the next latent vector <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span></span>.</figcaption>
 </div>
 
@@ -94,7 +87,7 @@ In our approach, we approximate $p(z)$ as a mixture of Gaussian distribution, an
 More specifically, the RNN will model $P(z_{t+1} \; | \; a_t, z_t, h_t)$, where $a_t$ is the action taken at time $t$ and $h_t$ is the *hidden state* of the RNN at time $t$. During sampling, we can adjust a *temperature* parameter $\tau$ to control model uncertainty, as done in <dt-cite key="sketchrnn"></dt-cite> -- we will find adjusting $\tau$ to be useful for training our controller later on.
 
 <div style="text-align: center;">
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/sketch_rnn_insect.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/sketch_rnn_insect.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>SketchRNN <dt-cite key="sketchrnndemo"></dt-cite> is an example of a MDN-RNN used to predict the next pen strokes of a sketch drawing. We use a similar model to predict the next latent vector <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span></span>.</figcaption>
 </div>
 
@@ -116,7 +109,7 @@ The following flow diagram illustrates how V, M, and C interacts with the enviro
 <!--During a rollout, it is important to note that C does not directly see the actual observations given to the agent, in this case, a 2D grid of pixels. The actual observation is first processed by V at each time step $t$ to produce $z_t$. The inputs into C is this latent vector $z_t$ concatenated with M's hidden state $h_t$ at each time step. C will then output an action vector $a_t$ for motor control. M will then take the current $z_t$ and action $a_t$ as an input to update its own hidden state to produce $h_{t+1}$ to be used at time $t+1$. -->
 
 <div id = "overview_diagram_div" style="text-align: center;">
-<img src="assets/world_model_schematic.svg" style="display: block; margin: auto; width: 65%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/world_model_schematic.svg" style="display: block; margin: auto; width: 65%;"/>
 <figcaption>Flow diagram of our Agent model. The raw observation is first processed by V at each time step <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.61508em;"></span><span class="strut bottom" style="height:0.61508em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span></span></span></span> to produce <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.04398em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>. The input into C is this latent vector <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.04398em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> concatenated with M's hidden state <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">h_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> at each time step. C will then output an action vector <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">a_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> for motor control. M will then take the current <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.04398em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> and action <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">a_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> as an input to update its own hidden state to produce <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">h_{t+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">t</span><span class="mbin">+</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> to be used at time <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">t</span><span class="mbin">+</span><span class="mord mathrm">1</span></span></span></span>.</figcaption>
 </div>
 
@@ -152,7 +145,7 @@ ______
 A predictive world model can help us extract useful representations of space and time. By using these features as inputs of a controller, we can train a compact and minimal controller to perform a continuous control task, such as learning to drive from pixel inputs for a top-down car racing environment <dt-cite key="carracing_v0"></dt-cite>. In this section, we describe how we can train the Agent model described earlier to solve a car racing task. To our knowledge, our agent is the first known solution to achieve the score required to solve this task.<dt-fn>We find this task interesting because although it is not difficult to train an agent to wobble around randomly generated tracks and obtain a mediocre score, CarRacing-v0 defines "solving" as getting average reward of 900 over 100 consecutive trials, which means the agent can only afford very few driving mistakes.</dt-fn>
 
 <div style="text-align: center;">
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/carracing_mistake_short.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/carracing_mistake_short.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>Our agent learning to navigate a top-down racing environment. <dt-cite key="carracing_v0"></dt-cite></figcaption>
 </div>
 
@@ -173,7 +166,7 @@ In this experiment, the world model (V and M) has no knowledge about the actual 
 The figure below compares actual the observation given to the agent and the observation captured by the world model. We can use the VAE to reconstruct each frame using $z_t$ at each time step to visualize the quality of the information the agent actually sees during a rollout:
 
 <div>
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/carracing_vae_compare.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/carracing_vae_compare.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <table style="text-align:center;width:100%;border:none">
   <tr>
     <td style="width:50%;border:none"><figcaption>Actual observations from the environment.</figcaption></td>
@@ -220,9 +213,8 @@ ______
 
 Training an agent to drive is not a difficult task if we have a good representation of the observation. Previous works <dt-cite key="browser_car,mar_io_kart,keras_car"></dt-cite> have shown that with a good set of hand-engineered information about the observation, such as LIDAR information, angles, positions and velocities, one can easily train a small feed-forward network to take this hand-engineered input and output a satisfactory navigation policy. For this reason, we first want to test our agent by handicapping C to only have access to V but not M, so we define our controller as $a_t = W_c \; z_t \;+ \; b_c$.
 
-<!--The agent only sees $z_t$ produced by the V model.-->
 <div>
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/carracing_z_only.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/carracing_z_only.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>Limiting our controller to see only <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.04398em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, but not <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">h_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> results in wobbly and unstable driving behaviours. </figcaption>
 </div>
 
@@ -234,7 +226,7 @@ The representation $z_t$ provided by our V model only captures a representation 
 
 <!--The agent only sees both $z_t$ and $h_t$.-->
 <div>
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/carracing_z_and_h.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/carracing_z_and_h.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>Driving is more stable if we give our controller access to both <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.04398em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">h_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>.</figcaption>
 </div>
 
@@ -273,7 +265,7 @@ ______
 If our world model is sufficiently accurate for its purpose, and complete enough for the problem at hand, we should be able to substitute the actual environment with this world model. After all, our agent does not directly observe the reality, but only sees what the world model lets it see. In this experiment, we train an agent inside the dream environment generated by its world model trained to mimic a VizDoom <dt-cite key="vizdoom"></dt-cite> environment.
 
 <div style="text-align: center;">
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/doom_lazy_small.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/doom_lazy_small.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>Our final agent solving the <i>VizDoom: Take Cover</i> environment. <dt-cite key="vizdoom,takecover"></dt-cite></figcaption>
 </div>
 
@@ -346,14 +338,14 @@ ______
 ## Transfer Policy to Actual Environment
 
 <div>
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/doom_real_deploy.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/doom_real_deploy.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>Deploying our policy learned inside of the dream RNN environment back into the actual VizDoom environment.</figcaption>
 </div>
 
 We took the agent trained inside of the virtual environment and tested its performance on the original VizDoom scenario. The score over 100 random consecutive trials is $\sim$ 1100 time steps, far beyond the required score of 750 time steps, and also much higher than the score obtained inside the more difficult virtual environment.<dt-fn>We will discuss how this score compares to other models later on.</dt-fn>
 
 <div>
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/doom_real_vae.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/doom_real_vae.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <table style="text-align:center;width:100%;border:none">
   <tr>
     <td style="width:50%;border:none"><figcaption>Cropped 64x64px frame of environment.</figcaption></td>
@@ -371,7 +363,7 @@ ______
 In our childhood, we may have encountered ways to exploit video games in ways that were not intended by the original game designer <dt-cite key="video_game_exploits"></dt-cite>. Players discover ways to collect unlimited lives or health, and by taking advantage of these exploits, they can easily complete an otherwise difficult game. However, in the process of doing so, they may have forfeited the opportunity to learn the skill required to master the game as intended by the game designer. In our initial experiments, we noticed that our agent discovered an *adversarial* policy to move around in such a way so that the monsters in this virtual environment governed by M never shoots a single fireball during some rollouts. Even when there are signs of a fireball forming, the agent moves in a way to *extinguish* the fireballs.
 
 <div>
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/doom_adversarial.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/doom_adversarial.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>Agent discovers an adversarial policy that fools the monsters inside the world model into never launching any fireballs during some rollouts.</figcaption>
 </div>
 
@@ -425,12 +417,12 @@ For more complicated tasks, an iterative training procedure is required. We need
 We have shown that one iteration of this training loop was enough to solve simple tasks. For more difficult tasks, we need our controller in Step 2 to actively explore parts of the environment that is beneficial to improve its world model. An exciting research direction is to look at ways to incorporate artificial curiosity and intrinsic motivation <dt-cite key="schmidhuber_creativity,s07_intrinsic,s08_curiousity,pathak2017,intrinsic_motivation"></dt-cite> and information seeking <dt-cite key="SchmidhuberStorck:94,Gottlieb2013"></dt-cite> abilities in an agent to encourage novel exploration <dt-cite key="Lehman2011"></dt-cite>. In particular, we can augment the reward function based on improvement in compression quality <dt-cite key="schmidhuber_creativity,s07_intrinsic,s08_curiousity,learning_to_think"></dt-cite>.
 
 <div style="text-align: center;">
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/pendulum01.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/pendulum01.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>Swing-up Pendulum from Pixels: Generated rollout after the first iteration. M has difficulty predicting states of a swung up pole since the data collected from the initial random policy is near the steady state in the bottom half. Despite this, C still learns to swing the pole upwards when deployed inside of M. </figcaption>
 </div>
 
 <div style="text-align: center;">
-<video autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;"><source src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/mp4/pendulum20.mp4" type="video/mp4"/></video>
+<video class="b-lazy" data-src="assets/mp4/pendulum20.mp4" type="video/mp4" autoplay muted playsinline loop style="display: block; margin: auto; width: 100%;" ></video>
 <figcaption>Swing-up Pendulum from Pixels: Generated rollout after 20 iterations. Deploying policies that swing the pole upwards in the actual environment gathered more data that recorded the pole being in the top half, allowing M to model the environment more accurately, and C to learn a better policy inside of M.</figcaption>
 </div>
 
@@ -439,7 +431,7 @@ In the present approach, since M is a MDN-RNN that models a probability distribu
 The iterative training procedure requires the M model to not only predict the next observation $x$ and $done$, but also predict the action and reward for the next time step. This may be required for more difficult tasks. For instance, if our agent needs to learn complex motor skills to walk around its environment, the world model will learn to imitate its own C model that has already learned to walk. After difficult motor skills, such as walking, is absorbed into a large world model with lots of capacity, the smaller C model can rely on the motor skills already absorbed by the world model and focus on learning more higher level skills to navigate itself using the motor skills it had already learned.<dt-fn>Another related connection is to muscle memory. For instance, as you learn to do something like play the piano, you no longer have to spend working memory capacity on translating individual notes to finger motions -- this all becomes encoded at a subconscious level.</dt-fn>
 
 <div style="text-align: center;">
-<img src="assets/memory_consolidation.svg" style="display: block; margin: auto; width: 86%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/memory_consolidation.svg" style="display: block; margin: auto; width: 86%;"/>
 <br/>
 <figcaption style="text-align: center;">How information becomes memory. <dt-cite key="memory_consolidation"></dt-cite></figcaption>
 </div>
@@ -463,7 +455,7 @@ Video game environments are also popular in model-based RL research as a testbed
 The works mentioned above use FNNs to predict the next video frame. We may want to use models that can capture longer term time dependencies. RNNs are powerful models suitable for sequence modelling <dt-cite key="graves_rnn"></dt-cite>. In a lecture called *Hallucination with RNNs* <dt-cite key="graves_lecture"></dt-cite>, Graves demonstrated the ability of RNNs to learn a probabilistic model of Atari game environments. He trained RNNs to learn the structure of such a game and then showed that they can hallucinate similar game levels on its own.
 
 <div style="text-align: center;">
-<img src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/world_models_1990.jpeg" style="display: block; margin: auto; width: 80%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/world_models_1990.jpeg" style="display: block; margin: auto; width: 80%;"/>
 <figcaption style="text-align: center;">A controller with internal RNN model of the world. <dt-cite key="s05_making_the_world_differentiable"></dt-cite></figcaption>
 </div>
 
@@ -486,7 +478,7 @@ The choice of implementing V as a VAE and training it as a standalone model also
 Another concern is the limited capacity of our world model. While modern storage devices can store large amounts of historical data generated using an iterative training procedure, our LSTM-based <dt-cite key="lstm,s12_lstm_forget"></dt-cite> world model may not be able to store all of the recorded information inside of its weight connections. While the human brain can hold decades and even centuries of memories to some resolution <dt-cite key="brain_capacity"></dt-cite>, our neural networks trained with backpropagation have more limited capacity and suffer from issues such as catastrophic forgetting <dt-cite key="Ratcliff1990,French1994,Kirkpatrick2016"></dt-cite>. Future work will explore replacing the VAE and MDN-RNN with higher capacity models <dt-cite key="outrageously_large_neural_nets,hypernetworks,suarez2017,wavenet,attention"></dt-cite>, or incorporating an external memory module <dt-cite key="Gemici2017"></dt-cite>, if we want our agent to learn to explore more complicated worlds.
 
 <div style="text-align: center;">
-<img src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/world_models_1990_feedback.jpeg" style="display: block; margin: auto; width: 65%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/world_models_1990_feedback.jpeg" style="display: block; margin: auto; width: 65%;"/>
 <figcaption style="text-align: center;">Ancient drawing (1990) of a RNN-based controller interacting with an environment. <dt-cite key="s05_making_the_world_differentiable"></dt-cite></figcaption>
 </div>
 

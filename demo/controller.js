@@ -5,6 +5,21 @@ $(document).scroll(function(){
   scroll_bottom = scroll_top + $(document).height();
 });
 
+// blazy code
+var bLazy = new Blazy({
+  success: function(){
+    updateCounter();
+  }
+});
+
+// not needed, only here to illustrate amount of loaded images
+var imageLoaded = 0;
+
+function updateCounter() {
+  imageLoaded++;
+  console.log("blazy image loaded: "+imageLoaded);
+}
+
 var contKeyMap = {};
 
 $(document).keydown(function(e) {

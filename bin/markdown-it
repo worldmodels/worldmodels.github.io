@@ -94,7 +94,7 @@ readFile(options.file, 'utf8', function (err, input) {
 
   // additional 4 lines:
   var mk = require('markdown-it-katex');
-  var md_center = require('markdown-it-center-text');
+  var md_center = require('../node_modules/markdown-it-center-text');
   md.use(mk);
   md.use(md_center);
 

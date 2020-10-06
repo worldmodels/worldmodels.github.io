@@ -166,7 +166,7 @@ dt-article figcaption b {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- roboto font -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+  <!--<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>-->
   <!-- icons -->
   <link rel="apple-touch-icon" sizes="57x57" href="logo/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="logo/apple-icon-60x60.png">
@@ -224,12 +224,11 @@ dt-article figcaption b {
   <meta name="citation_journal_abbrev" content="World Models">
   <meta name="citation_pdf_url" content="https://arxiv.org/pdf/1803.10122.pdf">
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">-->
+<link rel="stylesheet" href="css/katex.min.css">
 
 <!-- used google storage instead: https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/ -->
-<script src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/demo/lib/jquery-1.12.4.min.js"></script>
-<script src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/demo/lib/mobile-detect.min.js"></script>
-<script src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/demo/lib/template.v1.js"></script>
+<script src="demo/lib/template.v1.js"></script>
 
 <!--
 <script src="demo/lib/jquery-1.12.4.min.js"></script>
@@ -237,13 +236,17 @@ dt-article figcaption b {
 <script src="demo/lib/template.v1.js"></script>
 -->
 
-<script src="demo/controller.js"></script>
-
 <script type="text/front-matter">
   title: "World Models"
   description: "Can an agent to learn inside of its own dream?"
 </script>
 <body>
+  <div id="no_javasript_warning">
+    <h3>This page requires Javascript. Please enable it for <code>https://worldmodels.github.io/</code></h3>
+  </div>
+  <script>
+    document.getElementById("no_javasript_warning").style.display = "none";
+  </script>
   <div id="loading_text">
   <div class="spinner"></div>
   <div class="figload">&nbsp;&nbsp;&nbsp;&nbsp;Loading World Models ...</div>

@@ -50,7 +50,7 @@ We trained a Convolutional Variational Autoencoder (ConvVAE) model as our agent'
 In the following diagram, we describe the shape of our tensor at each layer of the ConvVAE and also describe the details of each layer:
 
 <div style="text-align: center;">
-<img src="assets/conv_vae_label.svg" style="display: block; margin: auto; width: 50%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/conv_vae_label.svg" style="display: block; margin: auto; width: 50%;"/>
 <figcaption>Convolutional Variational Autoencoder</figcaption>
 </div>
 
@@ -65,7 +65,7 @@ For the M Model, we use an <dt-cite key="lstm">LSTM</dt-cite> recurrent neural n
 To implement M, we use an LSTM <dt-cite key="lstm">LSTM</dt-cite> recurrent neural network combined with a Mixture Density Network <dt-cite key="bishop,mdntf"></dt-cite> as the output layer, as illustrated in figure below:
 
 <div style="text-align: center;">
-<img src="assets/mdn_rnn.svg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/mdn_rnn.svg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>MDN-RNN <dt-cite key="sketchrnn"></dt-cite></figcaption>
 </div>
 
@@ -86,26 +86,26 @@ For both environments, we applied $\tanh$ nonlinearities to clip and bound the a
 We used <dt-cite key="cmaes">Covariance-Matrix Adaptation Evolution Strategy (CMA-ES)</dt-cite> to evolve C's weights. Following the approach described in <dt-cite key="stablees">Evolving Stable Strategies</dt-cite>, we used a population size of 64, and had each agent perform the task 16 times with different initial random seeds. The agent's fitness value is the *average cumulative reward* of the 16 random rollouts. The figure below charts the best performer, worst performer, and mean fitness of the population of 64 agents at each generation:
 
 <div style="text-align: center;">
-<img src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/carracing.svg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/carracing.svg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>Training of <dt-cite key="carracing_v0">CarRacing-v0</dt-cite></figcaption>
 </div>
 
 Since the requirement of this environment is to have an agent achieve an average score above 900 over 100 random rollouts, we took the best performing agent at the end of every 25 generations, and tested it over 1024 random rollout scenarios to record this average on the red line. After 1800 generations, an agent was able to achieve an average score of 900.46 over 1024 random rollouts. We used 1024 random rollouts rather than 100 because each process of the 64 core machine had been configured to run 16 times already, effectively using a full generation of compute after every 25 generations to evaluate the best agent 1024 times. In the figure below, we plot the results of same agent evaluated over 100 rollouts:
 
 <div style="text-align: center;">
-<img src="assets/carracing_histogram.svg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/carracing_histogram.svg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>Histogram of cumulative rewards.<br/>Average score is 906 ± 21.</figcaption>
 </div>
 
 We also experimented with an agent that has access to only the $z_t$ vector from the VAE, but not  the RNN's hidden states. We tried 2 variations, where in the first variation, C maps $z_t$ directly to the action space $a_t$. In second variation, we attempted to add a hidden layer with 40 $tanh$ activations between $z_t$ and $a_t$, increasing the number of model parameters of C to 1443, making it more comparable with the original setup. These results are shown in the two figures below:
 
 <div style="text-align: center;">
-<img src="assets/carracing_histogram_z.svg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/carracing_histogram_z.svg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>When agent sees only <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.04398em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, average score is 632 ± 251.</figcaption>
 </div>
 
 <div style="text-align: center;">
-<img src="assets/carracing_histogram_z_hidden.svg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/carracing_histogram_z_hidden.svg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>When agent sees only <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">z_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.04398em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span>, with a hidden layer, average score is 788 ± 141.</figcaption>
 </div>
 
@@ -116,13 +116,13 @@ We conducted a similar experiment on the generated Doom environment we called *D
 In our virtual DoomRNN environment we increased the temperature slightly and used $\tau=1.15$ to make the agent learn in a more challenging environment. The best agent managed to obtain an average score of 959 over 1024 random rollouts. This is the highest score of the red line in the figure below:
 
 <div style="text-align: center;">
-<img src="https://storage.googleapis.com/quickdraw-models/sketchRNN/world_models/assets/doomrnn.svg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/doomrnn.svg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>Training of DoomRNN</figcaption>
 </div>
 
 This same agent achieved an average score of 1092 $\pm$ 556 over 100 random rollouts when deployed to the actual <dt-cite key="takecover">DoomTakeCover-v0</dt-cite> environment, as shown in the figure below:
 
 <div style="text-align: center;">
-<img src="assets/doomtakecover_histogram.svg" style="display: block; margin: auto; width: 100%;"/>
+<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="assets/doomtakecover_histogram.svg" style="display: block; margin: auto; width: 100%;"/>
 <figcaption>Histogram of time steps survived in the actual environment over 100 consecutive trials.<br/>Average score is 1092 ± 556.</figcaption>
 </div>
